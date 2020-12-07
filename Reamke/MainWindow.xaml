@@ -1,0 +1,88 @@
+﻿<Window x:Class="Reamke.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reamke"
+        mc:Ignorable="d"
+        Name="mainWindow"
+        
+        xmlns:uc="clr-namespace:Reamke.UserControl_TH"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource MainVM}"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        
+        Title="MainWindow" Height="450" Width="800">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindow}"
+                                   CommandParameter="{Binding ElementName=mainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <!--ControlBar-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition >
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}"></uc:ControlBarUC>
+        </Grid>
+        <!--Menu-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Width="200"
+                        Height="100"
+                        Command="{Binding OrderWindow}"
+                        ToolTip="Resource name: MaterialDesignRaisedAccentButton">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock FontSize="24" Text="Bán hàng" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" >
+                            <materialDesign:PackIcon Width="30" Height="30" HorizontalAlignment="Center" Kind="Cart" />
+                        </Grid>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Width="200"
+                        Height="100"
+                        Command="{Binding CheckWindow}"
+                        ToolTip="Resource name: MaterialDesignRaisedAccentButton">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock FontSize="23" Text="Tra cứu hóa đơn" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" >
+                            <materialDesign:PackIcon Width="30" Height="30" HorizontalAlignment="Center" Kind="FileCheck" />
+                        </Grid>
+                    </Grid>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

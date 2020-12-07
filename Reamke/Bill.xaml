@@ -1,0 +1,98 @@
+﻿<Window x:Class="Reamke.Bill"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reamke"
+        mc:Ignorable="d"
+        
+        xmlns:uc="clr-namespace:Reamke.UserControl_TH"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        
+        DataContext="{StaticResource BillVM}"
+        Title="Bill" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}"/>
+        </Grid>
+        <materialDesign:Card Grid.Row="1" Height="auto" Width="800" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <DatePicker Grid.Column="0"
+                        Width="200"
+                        SelectedDate="{Binding Date}"
+                        HorizontalAlignment="Left"
+                        materialDesign:HintAssist.Hint="Ngày"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                <Button Grid.Column="1"
+                    Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                    Content="Lọc">
+                </Button>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Right" Text="Số đơn hàng:" Margin="15" Style="{StaticResource MaterialDesignHeadline6TextBlock}">
+                    
+                </TextBlock>
+                <materialDesign:Card Background="Orange"
+                                     Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                     Padding="0"
+                                     Width="200"
+                                     HorizontalAlignment="Right"
+                                     Grid.Column="3">
+                    <Grid>
+                        <TextBlock 
+                                   Margin="15"
+                                   Text="{Binding Count}"
+                                   Style="{StaticResource MaterialDesignHeadline6TextBlock}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PasswordChanged">
+                                <i:InvokeCommandAction Command="{Binding PasswordChanged}"
+                                   CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        </TextBlock>
+                    </Grid>
+                </materialDesign:Card>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="2" Height="auto" Width="800" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Grid>
+                <ListView ItemsSource="{Binding ListHD}" SelectedItem="{Binding SelectDate}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding IDHoaDon}"
+                                            Header="Mã hóa đơn" />
+                            <GridViewColumn DisplayMemberBinding="{Binding TongSoLuong}"
+                                            Header="Tổng số lượng" />
+                            <GridViewColumn DisplayMemberBinding="{Binding TongTien}"
+                                            Header="Tổng tiền" />
+                            <GridViewColumn DisplayMemberBinding="{Binding NgayLap}"
+                                            Header="Thời gian" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>
