@@ -27,61 +27,139 @@ namespace Reamke
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if(string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword; 
+            }
         }
         private void Number1_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            String keyword = btn.Content.ToString(); 
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number2_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number3_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number4_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number5_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number6_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number7_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number8_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
         }
         private void Number9_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             String keyword = btn.Content.ToString();
-            MessageBox.Show(keyword);
+            if (string.IsNullOrEmpty(input.Text))
+            {
+                input.Text = keyword;
+            }
+            else
+            {
+                input.Text += keyword;
+            }
+        }
+        private void BackSpace_Click(object sender, RoutedEventArgs e)
+        {
+            input.Text = "";
+        }
+        private void Ok_Click(object sender, RoutedEventArgs e)
+        {
+            var check = input.Text.Count();
         }
     }
 }

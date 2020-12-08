@@ -24,6 +24,7 @@
           <Property Name="TenSanPham" Type="nvarchar" MaxLength="50" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="float" />
+          <Property Name="TongGia" Type="float" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -132,6 +133,7 @@
           <Property Name="TenSanPham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Double" />
+          <Property Name="TongGia" Type="Double" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK_GioHang_SanPham" FromRole="GioHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="HoaDon">
@@ -243,6 +245,7 @@
                 <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="TongGia" ColumnName="TongGia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

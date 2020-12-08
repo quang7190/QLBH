@@ -12,16 +12,18 @@ namespace Reamke.Model
     using Reamke.ViewModel;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class GioHang : BaseViewModel
     {
         public int IDGioHang { get; set; }
         public Nullable<int> IDSanPham { get; set; }
         public string TenSanPham { get; set; }
-        Nullable<int>  _SoLuong;
+        Nullable<int> _SoLuong;
         public Nullable<int> SoLuong { get => _SoLuong; set { _SoLuong = value; OnPropertyChanged(); } }
         public Nullable<double> DonGia { get; set; }
-    
+        Nullable<double> _TongGia;
+        public Nullable<double> TongGia { get => _TongGia; set { _TongGia = value; OnPropertyChanged(); } }
+
         public virtual SanPham SanPham { get; set; }
     }
 }

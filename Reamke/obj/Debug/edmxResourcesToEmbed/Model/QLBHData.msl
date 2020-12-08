@@ -20,6 +20,7 @@
           <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TongGia" ColumnName="TongGia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

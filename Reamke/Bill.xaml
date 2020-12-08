@@ -20,7 +20,7 @@
         WindowStartupLocation="CenterScreen"
         
         DataContext="{StaticResource BillVM}"
-        Title="Bill" Height="450" Width="800">
+        Title="Kiểm tra đơn" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -63,7 +63,7 @@
                     <Grid>
                         <TextBlock 
                                    Margin="15"
-                                   Text="{Binding Count}"
+                                   Text="{Binding Source={StaticResource BillVM}, Path=Count, Mode=OneWay}"
                                    Style="{StaticResource MaterialDesignHeadline6TextBlock}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="PasswordChanged">

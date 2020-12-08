@@ -21,6 +21,7 @@
     <Property Name="TenSanPham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="DonGia" Type="Double" />
+    <Property Name="TongGia" Type="Double" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_GioHang_SanPham" FromRole="GioHang" ToRole="SanPham" />
   </EntityType>
   <EntityType Name="HoaDon">

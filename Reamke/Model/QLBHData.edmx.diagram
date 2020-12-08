@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0f599598d4604adb8b2b097ecdddf2ca" Name="Diagram1">
+      <Diagram DiagramId="4d7152a4575943e4b1928de9bf93b523" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLyBanHangModel.ChiTietHD" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHangModel.GioHang" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.GioHang" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangModel.HoaDon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBanHangModel.SanPham" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBanHangModel.User" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.User" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="QuanLyBanHangModel.FK_ChiTietHD_HoaDon" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangModel.FK_ChiTietHD_SanPham" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangModel.FK_GioHang_SanPham" ManuallyRouted="false" />
